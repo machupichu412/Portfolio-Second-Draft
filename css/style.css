@@ -1,0 +1,243 @@
+h1, h2, p, a{
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #4B4B4B;
+}
+
+body {
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    overflow-x: hidden;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}  
+
+main{
+    text-align: center;
+}
+
+/* focus and hover states */
+*:focus{
+    outline: 2px solid orange;
+}
+a:hover{
+    color: orange;
+}
+
+/* current page */
+.highlighted{
+    font-weight: bold;
+}
+.highlighted>a{
+    color: black
+}
+
+/* nav/header styling */
+header{
+    background-color: whitesmoke;
+    display: block;
+}
+nav{
+    padding: 10px;
+    position: relative;
+}
+nav ul {
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav li {
+    display: inline;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+.skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 0.5s ease-out;
+    transition: top 0.5s ease-out;
+    z-index: 1;
+}
+.skip a{
+    position: absolute;
+    top: -40px;
+}
+.skip a:focus{
+    position: absolute;
+    top: 0px;
+}
+
+/* footer */
+footer {
+    position: absolute;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 60px;   /* Height of the footer */
+    background: whitesmoke;
+ }
+ .footer_icons {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+ }
+ .footer_icons div{
+    padding: 10px;
+ }
+
+/* index */
+.topic{
+    background-color: rgb(220, 236, 255);
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    height: 350px;
+    width: 350px;
+}
+.topics{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+/* drawings styling */
+.drawing_gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.gallery{
+    text-align: center;
+}
+.drawing>img{
+    max-height: 350px;
+    max-width: 90%;
+}
+.character_container, .creature_container, .sci-fi_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    align-content: space-between;
+    justify-items: center;
+    margin: 10%;
+}
+
+/* Graphic design styling */
+.design>img{
+    max-width: 250px;
+}
+.design_gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center
+}
+
+/* ui design project */
+iframe{
+    max-width: 100%;
+}
+.project{
+    display: grid;
+    justify-content: center;
+}
+
+ /* Common breakpoints are 320px — 480px 
+ for mobile devices, 481px — 768px for iPads & tablets, 
+ 769px — 1024px for small screens like laptop, 
+ 1025px — 1200px for large screens like Desktops, 
+ and 1201px and above for extra large screens like TV. */
+@media screen and (min-width: 480px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        font-size: 25px;
+    }
+
+    h2{
+        font-size: 25px;
+    }
+
+    footer{
+        position: relative;
+        bottom: 0;
+    }
+
+    /* index */
+    .topics{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .topic{
+        height: 400px;
+        width: 400px;
+    }
+
+    /* drawings page */
+    .drawing>img{
+        max-height: 400px;
+        max-width: 95%;
+    }
+    .character_container, .creature_container{
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    .sci-fi_container {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    /* design page */
+    .design>img{
+        max-width: 250px;
+    }
+    .design_gallery{
+        flex-direction: row;
+        justify-content: center
+    }
+}
+@media screen and (min-width: 768px) {
+    nav ul {
+        justify-content: flex-end;
+        font-size: 30px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    /* drawings page */
+    .drawing_gallery{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .drawing>img{
+        max-height: 600px;
+        max-width: 95%;
+    }
+    .creature_container{
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+    .sci-fi_container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    .cowboy {
+        grid-column: 1 /span 2;
+        grid-row-start: 2;
+    }
+    /* design page */
+    .design>img{
+        max-width: 350px;
+    }
+}
